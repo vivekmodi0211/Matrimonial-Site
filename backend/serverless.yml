@@ -1,0 +1,11 @@
+service: backend-serverless
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  profile: matrimonial
+
+functions:
+  function1:
+    handler: index.handler

@@ -1,13 +1,13 @@
-const express = require('express')
-const dotenv = require('dotenv').config().parsed;
-const routes = require("./routes/routes.js");
-
-const app = express()
-const port = dotenv.PORT;
-
-app.use("/", routes);
-
-
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+module.exports.handler = async (event) => {
+  return {
+    statusCode: 200,
+    body: JSON.stringify(
+      {
+        message: 'Go Serverless v3.0! Your function executed successfully!',
+        input: event,
+      },
+      null,
+      2
+    ),
+  };
+};
