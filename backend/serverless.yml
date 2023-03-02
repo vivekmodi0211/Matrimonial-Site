@@ -1,11 +1,14 @@
-service: backend-serverless
+service: backend
 frameworkVersion: '3'
 
 provider:
   name: aws
   runtime: nodejs18.x
-  profile: matrimonial
 
 functions:
-  function1:
+  api:
     handler: index.handler
+    events:
+      - httpApi:
+          path: /
+          method: get
